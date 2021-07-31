@@ -14,8 +14,12 @@ win.setCentralWidget(area)
 win.resize(1000,500)
 win.setWindowTitle("Terrain Data - " + version)
 
-createDock(area, "Viewer", 'top', 600, 400, False)
-createDock(area, "Console", 'top', 600, 400, False)
+def default_dock():
+    createDock(area, "Viewer", 'top', 600, 400, False)
+    createDock(area, "Console", 'bottom', 600, 200, False)
+    createDock(area, "Controler", 'right', 200, 200, False)
+
+
 
 win.showMaximized()
 win.show()
@@ -23,3 +27,4 @@ win.show()
 
 if __name__ == '__main__':
     pg.exec()
+    default_dock()
