@@ -3,9 +3,14 @@ from pyqtgraph.Qt import QtCore, QtGui
 import pyqtgraph.console
 import numpy as np
 from docks.main import createDock
-from pyqtgraph.dockarea import *
 
+# OWN MODULES IMPORT
+from pyqtgraph.dockarea import *
+from log.sender import *
+
+# APPDATA
 version = "1.0.0"
+
 # CREATE APP WINDOW
 app = pg.mkQApp("")
 win = QtGui.QMainWindow()
@@ -17,9 +22,10 @@ win.setWindowTitle("Terrain Data - " + version)
 def default_dock():
     createDock(area, "Viewer", 'top', 600, 400, False)
     createDock(area, "Console", 'bottom', 600, 200, False)
-    createDock(area, "Controler", 'right', 200, 200, False)
+    createDock(area, "Controler", 'right', 200, 600, False)
+    createDock(area, "Statistics", 'right', 100, 200, False)
 
-
+default_dock()
 
 win.showMaximized()
 win.show()
