@@ -28,6 +28,7 @@ def default_dock():
 dock_cus = Dock("Console", size=(600,200), closable=False)
 area.addDock(dock_cus, 'bottom')
 
+
 def createConsole():
     ...
 
@@ -37,6 +38,7 @@ def console_dock():
 
 default_dock()
 createConsole()
+console_dock()
 
 win.showMaximized()
 win.show()
