@@ -22,14 +22,21 @@ win.setWindowTitle("Terrain Data - " + version)
 
 def default_dock():
     createDock(area, "Viewer", 'top', 600, 400, False)
-    console_dock = createDock(area, "Console", 'bottom', 600, 200, False)
     createDock(area, "Controler", 'right', 200, 600, False)
     createDock(area, "Statistics", 'right', 100, 200, False)
 
+dock_cus = Dock("Console", size=(600,200), closable=False)
+area.addDock(dock_cus, 'bottom')
+
+def createConsole():
+    ...
+
 def console_dock():
-    console_logger(console_dock)
+    w2 = pg.console.ConsoleWidget()
+    dock_cus.addWidget(w2)
 
 default_dock()
+createConsole()
 
 win.showMaximized()
 win.show()
